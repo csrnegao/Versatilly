@@ -1,7 +1,8 @@
+<!DOCTYPE html>
 <html lang="pt-BR">
 <head>
   <meta charset="UTF-8">
-  <title>Versadigital</title>
+  <title>Minha Loja Virtual</title>
   <style>
     body {
       font-family: Arial, sans-serif;
@@ -81,7 +82,7 @@
 </head>
 <body>
 
-  <h1>Versatilly</h1>
+  <h1>Minha Loja Virtual</h1>
 
   <div id="produtos"></div>
 
@@ -102,14 +103,19 @@
         <option value="Cartão">Cartão</option>
         <option value="Pix">Pix</option>
       </select>
-      <center><button type="submit">Enviar Pedido</button></center>
+      <button type="submit">Enviar Pedido no WhatsApp</button>
     </form>
   </div>
 
   <script>
-    let produtos = JSON.parse(localStorage.getItem('produtos')) || [
-      { id: 1, nome: "Conjunto (blusa + calça) vermelho", preco: 320.00, imagem: 'https://images.app.goo.gl/MEWR4QjudASMsT4v5'}
+    let produtos = [
+      { id: 1, nome: "Camiseta Branca", preco: 59.90, imagem: "https://images.unsplash.com/photo-1581578017428-2d6ac6a8bd04?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwzNjUyOXwwfDF8c2VhcmNofDJ8fHRzaGlydHxlbnwwfHx8fDE2ODk2MzUyNjg&ixlib=rb-4.0.3&q=80&w=400" },
+      { id: 2, nome: "Tênis Esportivo", preco: 199.90, imagem: "https://images.unsplash.com/photo-1600180758890-098b17b8c84d?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwzNjUyOXwwfDF8c2VhcmNofDF8fHNua2VyfGVufDB8fHx8MTY4OTYzNTM0OQ&ixlib=rb-4.0.3&q=80&w=400" },
+      { id: 3, nome: "Relógio Digital", preco: 149.90, imagem: "https://images.unsplash.com/photo-1612817152483-5b01ab3de42d?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwzNjUyOXwwfDF8c2VhcmNofDZ8fHdhdGNofGVufDB8fHx8MTY4OTYzNTU0Mw&ixlib=rb-4.0.3&q=80&w=400" },
+      { id: 4, nome: "Mochila Preta", preco: 89.90, imagem: "https://images.unsplash.com/photo-1559027615-cd807b709c6e?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwzNjUyOXwwfDF8c2VhcmNofDV8fGJhY2twYWNrfGVufDB8fHx8MTY4OTYzNTY4NA&ixlib=rb-4.0.3&q=80&w=400" },
+      { id: 5, nome: "Fone de Ouvido", preco: 79.90, imagem: "https://images.unsplash.com/photo-1580894908374-58e4f656dd3d?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwzNjUyOXwwfDF8c2VhcmNofDJ8fGhlYWRwaG9uZXN8ZW58MHx8fHwxNjg5NjM1NzU4&ixlib=rb-4.0.3&q=80&w=400" }
     ];
+
     let sacola = [];
 
     function renderizarProdutos() {
