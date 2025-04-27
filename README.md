@@ -2,7 +2,7 @@
 <html lang="pt-BR">
 <head>
   <meta charset="UTF-8">
-  <title>Versatilly</title>
+  <title>Versadigital</title>
   <style>
     body {
       font-family: Arial, sans-serif;
@@ -109,7 +109,7 @@
 
   <script>
     let produtos = JSON.parse(localStorage.getItem('produtos')) || [
-      { id: 1, nome: "Conjunto (blusa + calça) vermelho", preco: 320.00, imagem: "https://images.app.goo.gl/MEWR4QjudASMsT4v5" }
+      { id: 1, nome: "Conjunto (blusa + calça) vermelho", preco: 320.00, imagem: 'https://images.app.goo.gl/MEWR4QjudASMsT4v5'}
     ];
     let sacola = [];
 
