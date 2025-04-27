@@ -109,7 +109,7 @@
 
   <script>
     let produtos = JSON.parse(localStorage.getItem('produtos')) || [
-      { id: 1, nome: "Produto Exemplo", preco: 10.00, imagem: "https://via.placeholder.com/150" }
+      { id: 1, nome: "Conjunto (blusa + calça) vermelho", preco: 320.00, imagem: "https://images.app.goo.gl/MEWR4QjudASMsT4v5" }
     ];
     let sacola = [];
 
