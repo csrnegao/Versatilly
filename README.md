@@ -1,6 +1,4 @@
-<!DOCTYPE html>
 <html lang="pt-BR">
-<html lang="en-EUA>
 <head>
   <meta charset="UTF-8">
   <title>Versadigital</title>
