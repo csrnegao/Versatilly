@@ -2,7 +2,7 @@
 <html lang="pt-BR">
 <head>
   <meta charset="UTF-8">
-  <title>Minha Loja Virtual</title>
+  <title>Versatilly</title>
   <style>
     body {
       font-family: Arial, sans-serif;
@@ -10,18 +10,15 @@
       padding: 20px;
       background-color: #f7f7f7;
     }
-
     h1, h2 {
       text-align: center;
     }
-
     #produtos {
       display: grid;
       grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
       gap: 20px;
       margin-bottom: 40px;
     }
-
     .produto {
       background: white;
       border: 1px solid #ddd;
@@ -30,7 +27,6 @@
       text-align: center;
       box-shadow: 0px 2px 5px rgba(0,0,0,0.1);
     }
-
     .produto img {
       max-width: 100%;
       height: 150px;
@@ -38,12 +34,10 @@
       margin-bottom: 10px;
       border-radius: 8px;
     }
-
     .produto input {
       width: 60px;
       margin: 5px 0;
     }
-
     .produto button {
       background-color: #28a745;
       color: white;
@@ -52,11 +46,9 @@
       border-radius: 5px;
       cursor: pointer;
     }
-
     .produto button:hover {
       background-color: #218838;
     }
-
     .sacola, .formulario {
       background: white;
       border: 1px solid #ddd;
@@ -68,12 +60,10 @@
       margin-left: auto;
       margin-right: auto;
     }
-
     #sacola li {
       list-style: none;
       margin: 5px 0;
     }
-
     input, select {
       width: 100%;
       padding: 8px;
@@ -81,12 +71,10 @@
       border: 1px solid #ccc;
       border-radius: 5px;
     }
-
     button[type="submit"] {
       background-color: #007bff;
       padding: 10px;
     }
-
     button[type="submit"]:hover {
       background-color: #0056b3;
     }
@@ -94,7 +82,7 @@
 </head>
 <body>
 
-  <h1>Minha Loja Virtual</h1>
+  <h1>Versatilly</h1>
 
   <div id="produtos"></div>
 
@@ -184,7 +172,7 @@
       const total = sacola.reduce((sum, item) => sum + item.preco, 0);
       mensagem += `\n*Total:* R$ ${total.toFixed(2)}`;
 
-      const url = `https://wa.me/SEUNUMERO?text=${encodeURIComponent(mensagem)}`;
+      const url = `https://wa.me/85991526255text=${encodeURIComponent(mensagem)}`;
       window.open(url, '_blank');
     });
 
