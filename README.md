@@ -2,32 +2,122 @@
 <html lang="pt-BR">
 <head>
   <meta charset="UTF-8">
-  <title>Versatilly</title>
+  <title>Minha Loja Virtual</title>
   <style>
-    /* Seu CSS aqui (estilize como quiser) */
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 20px;
+      background-color: #f7f7f7;
+    }
+
+    h1, h2 {
+      text-align: center;
+    }
+
+    #produtos {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+      gap: 20px;
+      margin-bottom: 40px;
+    }
+
+    .produto {
+      background: white;
+      border: 1px solid #ddd;
+      border-radius: 8px;
+      padding: 15px;
+      text-align: center;
+      box-shadow: 0px 2px 5px rgba(0,0,0,0.1);
+    }
+
+    .produto img {
+      max-width: 100%;
+      height: 150px;
+      object-fit: cover;
+      margin-bottom: 10px;
+      border-radius: 8px;
+    }
+
+    .produto input {
+      width: 60px;
+      margin: 5px 0;
+    }
+
+    .produto button {
+      background-color: #28a745;
+      color: white;
+      border: none;
+      padding: 8px 12px;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    .produto button:hover {
+      background-color: #218838;
+    }
+
+    .sacola, .formulario {
+      background: white;
+      border: 1px solid #ddd;
+      border-radius: 8px;
+      padding: 20px;
+      margin-bottom: 20px;
+      box-shadow: 0px 2px 5px rgba(0,0,0,0.1);
+      max-width: 600px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    #sacola li {
+      list-style: none;
+      margin: 5px 0;
+    }
+
+    input, select {
+      width: 100%;
+      padding: 8px;
+      margin: 5px 0 10px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+    }
+
+    button[type="submit"] {
+      background-color: #007bff;
+      padding: 10px;
+    }
+
+    button[type="submit"]:hover {
+      background-color: #0056b3;
+    }
   </style>
 </head>
 <body>
 
-  <h1>Versatilly</h1>
+  <h1>Minha Loja Virtual</h1>
 
-  <div id="produtos" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 20px;"></div>
+  <div id="produtos"></div>
 
-  <h2>Sacola</h2>
-  <ul id="sacola"></ul>
-  <p><strong>Total:</strong> R$ <span id="total">0.00</span></p>
+  <div class="sacola">
+    <h2>Sacola</h2>
+    <ul id="sacola"></ul>
+    <p><strong>Total:</strong> R$ <span id="total">0.00</span></p>
+  </div>
 
-  <h2>Finalizar Pedido</h2>
-  <form id="formulario">
-    <input type="text" id="nome" placeholder="Nome" required><br>
-    <input type="text" id="endereco" placeholder="Endereço" required><br>
-    <select id="pagamento" required>
-      <option value="">Forma de pagamento</option>
-      <option value="Dinheiro">Dinheiro</option>
-      <option value="Pix">Pix</option>
-    </select><br><br>
-    <button type="submit">Enviar Pedido no WhatsApp</button>
-  </form>
+  <div class="formulario">
+    <h2>Finalizar Pedido</h2>
+    <form id="formulario">
+      <input type="text" id="nome" placeholder="Nome" required>
+      <input type="text" id="endereco" placeholder="Endereço" required>
+      <select id="pagamento" required>
+        <option value="">Forma de pagamento</option>
+        <option value="Dinheiro">Dinheiro</option>
+        <option value="Cartão">Cartão</option>
+        <option value="Pix">Pix</option>
+      </select>
+      <button type="submit">Enviar Pedido no WhatsApp</button>
+    </form>
+  </div>
 
   <script>
     let produtos = JSON.parse(localStorage.getItem('produtos')) || [
@@ -41,11 +131,13 @@
 
       produtos.forEach(produto => {
         const card = document.createElement('div');
+        card.className = 'produto';
         card.innerHTML = `
-          <img src="${produto.imagem}" alt="${produto.nome}" style="width:100%">
+          <img src="${produto.imagem}" alt="${produto.nome}">
           <h3>${produto.nome}</h3>
           <p>R$ ${produto.preco.toFixed(2)}</p>
           <input type="number" id="qtd-${produto.id}" min="1" value="1">
+          <br>
           <button onclick="adicionarSacola(${produto.id})">Adicionar</button>
         `;
         produtosDiv.appendChild(card);
@@ -92,7 +184,7 @@
       const total = sacola.reduce((sum, item) => sum + item.preco, 0);
       mensagem += `\n*Total:* R$ ${total.toFixed(2)}`;
 
-      const url = `https://wa.me/5585991769080text=${encodeURIComponent(mensagem)}`;
+      const url = `https://wa.me/SEUNUMERO?text=${encodeURIComponent(mensagem)}`;
       window.open(url, '_blank');
     });
 
