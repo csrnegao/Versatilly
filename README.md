@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
+<html lang="en-EUA>
 <head>
   <meta charset="UTF-8">
   <title>Versadigital</title>
@@ -172,7 +173,7 @@
       const total = sacola.reduce((sum, item) => sum + item.preco, 0);
       mensagem += `\n*Total:* R$ ${total.toFixed(2)}`;
 
-      const url = `https://wa.me/85991526255text=${encodeURIComponent(mensagem)}`;
+      const url = `https://wa.me/+5585991526255text=${encodeURIComponent(mensagem)}`;
       window.open(url, '_blank');
     });
 
