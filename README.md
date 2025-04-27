@@ -102,7 +102,7 @@
         <option value="Cartão">Cartão</option>
         <option value="Pix">Pix</option>
       </select>
-      <button type="submit">Enviar Pedido no WhatsApp</button>
+      <center><button type="submit">Enviar Pedido</button></center>
     </form>
   </div>
 
